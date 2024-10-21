@@ -1,9 +1,9 @@
 // run tsc FlickrTestAPI.ts to conver to js
 // run node FlickrTestAPI.js to execute js file
-async function getImages(apiKey, tag, pages) {
+async function getImages(apiKey, tag, text, pages) {
     try {
         for(let j = 1; j <= pages; j ++) {
-            const res = await fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tag}&page=${j}&format=json&nojsoncallback=1`);
+            const res = await fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tag}&text=${text}&page=${j}&format=json&nojsoncallback=1`);
             const data = await res.json();
             const images = data.photos.photo;
             for(let i = 0; i < images.length; i ++) {
@@ -45,6 +45,6 @@ async function getMetaData(apiKey, imageID) {
     }
 }
 
-getImages("0f56c63a41232cffabc80dd3f090a95d", "social_inequality,women_in_stem,gender_equality,women_in_tech,feminism,education", 100);
+getImages("0f56c63a41232cffabc80dd3f090a95d", "", "women_in_science", 100);
 // getMetaData("0f56c63a41232cffabc80dd3f090a95d", "54023109266");
 // getMetaData("0f56c63a41232cffabc80dd3f090a95d", "54027804603");

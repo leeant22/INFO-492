@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 // run tsc FlickrTestAPI.ts to conver to js
 // run node FlickrTestAPI.js to execute js file
-function getImages(apiKey, tag, pages) {
+function getImages(apiKey, tag, text, pages) {
     return __awaiter(this, void 0, void 0, function () {
         var j, res, data, images, i, image, imageURL, img, flickrLink, a, error_1;
         return __generator(this, function (_a) {
@@ -47,7 +47,7 @@ function getImages(apiKey, tag, pages) {
                     _a.label = 1;
                 case 1:
                     if (!(j <= pages)) return [3 /*break*/, 5];
-                    return [4 /*yield*/, fetch("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=".concat(apiKey, "&tags=").concat(tag, "&page=").concat(j, "&format=json&nojsoncallback=1"))];
+                    return [4 /*yield*/, fetch("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=".concat(apiKey, "&tags=").concat(tag, "&text=").concat(text, "&page=").concat(j, "&format=json&nojsoncallback=1"))];
                 case 2:
                     res = _a.sent();
                     return [4 /*yield*/, res.json()];
@@ -115,6 +115,6 @@ function getMetaData(apiKey, imageID) {
         });
     });
 }
-getImages("0f56c63a41232cffabc80dd3f090a95d", "social_inequality,women_in_stem,gender_equality,women_in_tech,feminism,education", 100);
+getImages("0f56c63a41232cffabc80dd3f090a95d", "", "women_in_science", 100);
 // getMetaData("0f56c63a41232cffabc80dd3f090a95d", "54023109266");
 // getMetaData("0f56c63a41232cffabc80dd3f090a95d", "54027804603");
