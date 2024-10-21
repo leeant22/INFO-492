@@ -45,6 +45,6 @@ async function getMetaData(apiKey, imageID) {
     }
 }
 
-getImages("0f56c63a41232cffabc80dd3f090a95d", "Washington+Monument, Washington+DC", 3);
-getMetaData("0f56c63a41232cffabc80dd3f090a95d", "54023109266");
-getMetaData("0f56c63a41232cffabc80dd3f090a95d", "54027804603");
+getImages("0f56c63a41232cffabc80dd3f090a95d", "social_inequality,women_in_stem,gender_equality,women_in_tech,feminism,education", 100);
+// getMetaData("0f56c63a41232cffabc80dd3f090a95d", "54023109266");
+// getMetaData("0f56c63a41232cffabc80dd3f090a95d", "54027804603");
